@@ -1,0 +1,9 @@
+@font-face {
+    font-family: "Marck Script";
+    src: url("assets/MarckScript-Regular.ttf") format("truetype");
+}
+
+.logo-font {
+    font-family: 'Marck Script', monospace;
+    font-size: 30px;
+}
