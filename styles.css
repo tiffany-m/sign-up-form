@@ -13,11 +13,11 @@
     flex-direction: row;
 }
 
+/* Left half of page with background image ----------------------- */
 .image-block {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     background-image: url("assets/bloom-bg.jpg");
     background-position: center;
     background-size: cover;
@@ -47,4 +47,79 @@
     font-size: 7rem;
     color: #00ACBB;
     text-shadow: -2px 2px 0 rgb(133, 131, 131);
+}
+
+/* Right half of page with form ------------------------ */
+
+.form-block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgb(245, 251, 253);
+}
+
+.form-intro, form, .form-end {
+    padding: 2.5rem;
+}
+
+.form-intro {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-right: 20%;
+    font-weight: bold;
+}
+
+.logo-font {
+    font-family: 'Marck Script', monospace;
+    font-size: 1.5rem;
+}
+
+.slant-text {
+    font-style: italic;
+}
+
+form {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    box-shadow: 0px 10px 20px rgb(225, 243, 250), 0px -5px 20px rgb(225, 243, 250);
+}
+
+input, label {
+    display: block;
+}
+
+input {
+    padding: 5px;
+}
+
+label {
+    text-transform: uppercase;
+    font-size: .75rem;
+}
+
+.block-input {
+    display: flex;
+    gap: 4rem;
+}
+
+input[type=submit] {
+    background-color: #00ACBB;
+    padding: 1rem 3rem;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 5px 5px rgb(225, 243, 250);
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: #00ACBB;
+    font-weight: bold;
 }
