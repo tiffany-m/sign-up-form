@@ -140,3 +140,7 @@ a {
     color: var(--dark-teal);
     font-weight: bold;
 }
+
+.error {
+    border: 3px solid red;
+}
