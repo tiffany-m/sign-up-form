@@ -3,6 +3,11 @@
     padding: 0;
 }
 
+:root {
+    --dark-teal: #00ACBB;
+    --light-teal: rgb(225, 243, 250);
+}
+
 @font-face {
     font-family: "Marck Script";
     src: url("assets/MarckScript-Regular.ttf") format("truetype");
@@ -34,7 +39,7 @@
     align-items: center;
     gap: 1rem;
     align-self: stretch;
-    background-color: rgb(225, 243, 250);
+    background-color: var(--light-teal);
     opacity: .95;
 }
 
@@ -46,7 +51,7 @@
 .logo-text {
     font-family: 'Marck Script', monospace;
     font-size: 7rem;
-    color: #00ACBB;
+    color: var(--dark-teal);
     text-shadow: -2px 2px 0 rgb(133, 131, 131);
 }
 
@@ -86,7 +91,7 @@ form {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    box-shadow: 0px 10px 20px rgb(225, 243, 250), 0px -5px 20px rgb(225, 243, 250);
+    box-shadow: 0px 10px 20px var(--light-teal), 0px -5px 20px var(--light-teal);
 }
 
 input, label {
@@ -99,7 +104,7 @@ input {
 
 input:focus {
     outline: none;
-    border: 2px solid #00ACBB;
+    border: 3px solid var(--dark-teal);
 }
 
 label {
@@ -113,7 +118,7 @@ label {
 }
 
 input[type=submit] {
-    background-color: #00ACBB;
+    background-color: var(--dark-teal);
     padding: 1rem 3rem;
     margin-bottom: 2rem;
     border-radius: 10px;
@@ -132,6 +137,6 @@ input[type="submit"]:active {
 
 a {
     text-decoration: none;
-    color: #00ACBB;
+    color: var(--dark-teal);
     font-weight: bold;
 }
