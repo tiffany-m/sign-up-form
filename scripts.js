@@ -16,6 +16,7 @@ let confirmPw = document.querySelector(".confirmPw");
 
 let submitButton = document.getElementById("submit_btn")
 let passwordInput = document.querySelector(".password-input");
+let pwErrorMessage = document.querySelector(".pwErrorMessage");
 
 submitButton.addEventListener("click", (e) => {
     e.preventDefault();
@@ -113,34 +114,22 @@ userPassword.onkeyup = function () {
     }
 }
 
-let errorMessage = document.createElement("div");
-errorMessage.textContent = "Passwords do not match.";
-errorMessage.style.cssText = "align-self: center; color: red; font-weight: bold;";
-
 submitButton.addEventListener("click", () => {
     if((userPassword != confirmPassword) && (userPassword.value != "") && (confirmPassword.value != "") ) {
         userPassword.classList.add("error");
         confirmPassword.classList.add("error");
-        passwordInput.appendChild(errorMessage);
+        pwErrorMessage.classList.remove("hidden");
     }
 })
 
 userPassword.addEventListener("click", () => {
-    if(errorMessage) {
-        passwordInput.removeChild(errorMessage);
-        userPassword.classList.toggle("error");
-        confirmPassword.classList.toggle("error");
-        userPassword.textContent = "";
-        confirmPassword.textContent ="";
-    }
+    userPassword.classList.remove("error");
+    confirmPassword.classList.remove("error");
+    pwErrorMessage.classList.toggle("hidden");
 })
 
 confirmPassword.addEventListener("click", () => {
-    if (errorMessage) {
-        passwordInput.removeChild(errorMessage);
-        userPassword.classList.toggle("error");
-        confirmPassword.classList.toggle("error");
-        userPassword.textContent = "";
-        confirmPassword.textContent = "";
-    }
+    userPassword.classList.remove("error");
+    confirmPassword.classList.remove("error");
+    pwErrorMessage.classList.toggle("hidden");
 })
