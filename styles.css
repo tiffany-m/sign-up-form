@@ -6,6 +6,7 @@
 :root {
     --dark-teal: #00ACBB;
     --light-teal: rgb(225, 243, 250);
+    --error-red: #f31974;
 }
 
 @font-face {
@@ -18,7 +19,8 @@
 }
 
 .fName, .lName, .eMail, .phoneNum, .pw, .confirmPw {
-    color: red;
+    color: var(--error-red);
+    font-weight: bold;
 }
 
 .container {
@@ -127,8 +129,8 @@ label {
 
 input[type=submit] {
     background-color: var(--dark-teal);
-    padding: 1rem 3rem;
-    margin-bottom: 2rem;
+    padding: 1rem;
+    width: 250px;
     border-radius: 10px;
     border: none;
     box-shadow: 3px 2px 5px rgb(84, 119, 131);
@@ -150,5 +152,28 @@ a {
 }
 
 .error {
-    border: 3px solid red;
+    border: 3px solid var(--error-red);
+}
+
+
+/* Password message box --------------------------------------------- */
+#message {
+    display: none;
+    position: relative;
+}
+
+#message p {
+    padding: 5px;
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+    color: #2ea55a;
+    font-weight: bold;
+}
+
+/* Add a red text color and an "x" icon when the requirements are wrong */
+.invalid {
+    color: var(--error-red);
+    font-weight: bold;
 }
