@@ -15,12 +15,22 @@ submitButton.addEventListener("click", () => {
     }
 })
 
-console.log()
-
 userPassword.addEventListener("click", () => {
     if(errorMessage) {
         passwordInput.removeChild(errorMessage);
         userPassword.classList.toggle("error");
         confirmPassword.classList.toggle("error");
+        userPassword.textContent = "";
+        confirmPassword.textContent ="";
+    }
+})
+
+confirmPassword.addEventListener("click", () => {
+    if (errorMessage) {
+        passwordInput.removeChild(errorMessage);
+        userPassword.classList.toggle("error");
+        confirmPassword.classList.toggle("error");
+        userPassword.textContent = "";
+        confirmPassword.textContent = "";
     }
 })
