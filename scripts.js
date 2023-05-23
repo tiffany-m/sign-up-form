@@ -99,7 +99,7 @@ function validatePwConfirmMatch() {
         userPassword.classList.add("error");
         confirmPassword.classList.add("error");
         pwErrorMessage.classList.remove("hidden");
-        pwErrorMessage.textConent = "Passwords do not match."
+        pwErrorMessage.textContent = "Passwords do not match."
     }
 }
 
