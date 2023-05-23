@@ -57,6 +57,7 @@ submitButton.addEventListener("click", (e) => {
         confirmPw.classList.add("hidden");
     }
 })
+
 var letter = document.getElementById("letter");
 var capital = document.getElementById("capital");
 var number = document.getElementById("number");
