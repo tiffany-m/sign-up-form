@@ -2,7 +2,7 @@
 Simple calculator! 
 ## About
 This was a practice project for making forms.
-![Reference image to copy from The Odin Project.](assets/odin-sign-up-form.png.png)
+![Reference image to copy from The Odin Project.](assets/odin-sign-up-form.png)
 
 ## Build Status
 Complete
