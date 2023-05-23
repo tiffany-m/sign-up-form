@@ -46,9 +46,7 @@ function validateEmailPhone(mail, phone) {
     }
 }
 
-submitButton.addEventListener("click", (e) => {
-    e.preventDefault();
-
+function validateRequiredFields() {
     if (firstName.value === "") {
         fName.classList.remove("hidden");
     } else {
@@ -72,8 +70,8 @@ submitButton.addEventListener("click", (e) => {
     } else {
         phoneNum.classList.add("hidden");
     }
-    
-    if(userPassword.value === "") {
+
+    if (userPassword.value === "") {
         pw.classList.remove("hidden");
     } else {
         pw.classList.add("hidden");
@@ -84,7 +82,9 @@ submitButton.addEventListener("click", (e) => {
     } else {
         confirmPw.classList.add("hidden");
     }
+}
 
+function validatePwConfirmMatch() {
     if ((userPassword != confirmPassword) && (userPassword.value != "" && confirmPassword.value != "")) {
         userPassword.classList.add("error");
         confirmPassword.classList.add("error");
@@ -92,8 +92,13 @@ submitButton.addEventListener("click", (e) => {
         userPassword.textContent = "";
         confirmPassword.textContent = "";
     }
+}
 
+submitButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    validateRequiredFields();
     validateEmailPhone(userEmail, userTel);
+    validatePwConfirmMatch();
 })
 
 var letter = document.getElementById("letter");
