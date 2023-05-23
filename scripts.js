@@ -18,15 +18,18 @@ let submitButton = document.getElementById("submit_btn")
 let passwordInput = document.querySelector(".password-input");
 let pwErrorMessage = document.querySelector(".pwErrorMessage");
 
+let emailRegX = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+let phoneRegX = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
+
 function validateEmailPhone(mail, phone) {
-    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail.value) === false && /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(phone.value) === false) {
+    if (emailRegX.test(mail.value) === false && phoneRegX.test(phone.value) === false) {
         alert("You have entered an invalid email and phone number!")
         return (false);
     }
-    else if ((/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail.value) === true) && (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(phone.value) === false)) {
+    else if (emailRegX.test(mail.value) === true && phoneRegX.test(phone.value) === false) {
         alert("You have entered an invalid phone number!  Please follow example text for format.")
         return (false);
-    } else if ((/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail.value) === false) && (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(phone.value) === true)) {
+    } else if (emailRegX.test(mail.value) === false && phoneRegX.test(phone.value) === true) {
         alert("You have entered an invalid email!  Please follow example text for format.")
         return (false);
     } else {
