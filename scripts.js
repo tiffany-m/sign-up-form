@@ -111,19 +111,17 @@ submitButton.addEventListener("click", (e) => {
     validatePwConfirmMatch();
 })
 
-// When the user clicks on the password field, show the message box
+// ------------------ PASSWORD MESSAGE BOX ---------------------
+// When user clicks on password field, show message box
 userPassword.onfocus = function () {
     document.getElementById("message").style.display = "block";
 }
-
-// When the user clicks outside of the password field, hide the message box
+// When user clicks outside of password field, hide message box
 userPassword.onblur = function () {
     document.getElementById("message").style.display = "none";
 }
-
-// When the user starts to type something inside the password field
+// When user starts to type something inside password field
 userPassword.onkeyup = function () {
-    // Validate lowercase letters
     if (userPassword.value.match(lowerCaseLetters)) {
         letter.classList.remove("invalid");
         letter.classList.add("valid");
@@ -132,7 +130,6 @@ userPassword.onkeyup = function () {
         letter.classList.add("invalid");
     }
 
-    // Validate capital letters
     if (userPassword.value.match(upperCaseLetters)) {
         capital.classList.remove("invalid");
         capital.classList.add("valid");
@@ -141,7 +138,6 @@ userPassword.onkeyup = function () {
         capital.classList.add("invalid");
     }
 
-    // Validate numbers
     if (userPassword.value.match(numbers)) {
         number.classList.remove("invalid");
         number.classList.add("valid");
@@ -150,7 +146,6 @@ userPassword.onkeyup = function () {
         number.classList.add("invalid");
     }
 
-    // Validate length
     if (userPassword.value.length >= 8) {
         length.classList.remove("invalid");
         length.classList.add("valid");
@@ -160,6 +155,7 @@ userPassword.onkeyup = function () {
     }
 }
 
+// Remove Error from password and confirm password fields
 userPassword.addEventListener("click", () => {
     userPassword.classList.remove("error");
     confirmPassword.classList.remove("error");
