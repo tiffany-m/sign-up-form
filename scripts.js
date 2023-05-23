@@ -18,6 +18,22 @@ let submitButton = document.getElementById("submit_btn")
 let passwordInput = document.querySelector(".password-input");
 let pwErrorMessage = document.querySelector(".pwErrorMessage");
 
+function validateEmailPhone(mail, phone) {
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail.value) === false && /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(phone.value) === false) {
+        alert("You have entered an invalid email and phone number!")
+        return (false);
+    }
+    else if ((/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail.value) === true) && (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(phone.value) === false)) {
+        alert("You have entered an invalid phone number!  Please follow example text for format.")
+        return (false);
+    } else if ((/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail.value) === false) && (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(phone.value) === true)) {
+        alert("You have entered an invalid email!  Please follow example text for format.")
+        return (false);
+    } else {
+        return (true);
+    }
+}
+
 submitButton.addEventListener("click", (e) => {
     e.preventDefault();
 
@@ -56,6 +72,8 @@ submitButton.addEventListener("click", (e) => {
     } else {
         confirmPw.classList.add("hidden");
     }
+
+    validateEmailPhone(userEmail, userTel);
 })
 
 var letter = document.getElementById("letter");
