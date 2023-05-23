@@ -30,21 +30,21 @@ let length = document.getElementById("length");
 let submitButton = document.getElementById("submit_btn")
 
 function validateEmailPhone(mail, phone) {
-    if (mail.value === "" && phone.value === "") {
+    if (mail === "" && phone === "") {
         return;
     }
-    else if (emailRegX.test(mail.value) === false && phoneRegX.test(phone.value) === false) {
+    else if (emailRegX.test(mail) === false && phoneRegX.test(phone) === false) {
         userEmail.classList.add("error");
         userTel.classList.add("error");
         emailTelErrorMessage.classList.remove("hidden");
         emailTelErrorMessage.textContent = "Email and Tel are invalid.";
     }
-    else if (emailRegX.test(mail.value) === true && phoneRegX.test(phone.value) === false) {
+    else if (emailRegX.test(mail) === true && phoneRegX.test(phone) === false) {
         userEmail.classList.remove("error");
         userTel.classList.add("error");
         emailTelErrorMessage.classList.remove("hidden");
         emailTelErrorMessage.textContent = "Tel is invalid.";
-    } else if (emailRegX.test(mail.value) === false && phoneRegX.test(phone.value) === true) {
+    } else if (emailRegX.test(mail) === false && phoneRegX.test(phone) === true) {
         userEmail.classList.add("error");
         userTel.classList.remove("error");
         emailTelErrorMessage.classList.remove("hidden");
@@ -107,7 +107,7 @@ function validatePwConfirmMatch() {
 submitButton.addEventListener("click", (e) => {
     e.preventDefault();
     validateRequiredFields();
-    validateEmailPhone(userEmail, userTel);
+    validateEmailPhone(userEmail.value, userTel.value);
     validatePwConfirmMatch();
 })
 
