@@ -51,11 +51,11 @@
                 <div class="block-input password-input">
                     <div>
                         <label for="user_password">Password <span class="hidden pw">*Required</span></label>
-                        <input type="password" id="user_password" name="user_password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                        <input type="password" id="user_password" name="user_password" minlength="8" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
                     </div>
                     <div>
                         <label for="confirm_password">Confirm Password <span class="hidden confirmPw">*Required</span></label> 
-                        <input type="password" id="confirm_password" name="confirm_password" minlength="6" maxlength="12">                        
+                        <input type="password" id="confirm_password" name="confirm_password" minlength="8">                        
                     </div>
                     <div class="hidden pwErrorMessage">Passwords do not match.</div>
                 </div>

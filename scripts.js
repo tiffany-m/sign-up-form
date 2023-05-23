@@ -76,6 +76,14 @@ submitButton.addEventListener("click", (e) => {
         confirmPw.classList.add("hidden");
     }
 
+    if ((userPassword != confirmPassword) && (userPassword.value != "" && confirmPassword.value != "")) {
+        userPassword.classList.add("error");
+        confirmPassword.classList.add("error");
+        pwErrorMessage.classList.remove("hidden");
+        userPassword.textContent = "";
+        confirmPassword.textContent = "";
+    }
+
     validateEmailPhone(userEmail, userTel);
 })
 
@@ -136,22 +144,14 @@ userPassword.onkeyup = function () {
     }
 }
 
-submitButton.addEventListener("click", () => {
-    if((userPassword != confirmPassword) && (userPassword.value != "") && (confirmPassword.value != "") ) {
-        userPassword.classList.add("error");
-        confirmPassword.classList.add("error");
-        pwErrorMessage.classList.remove("hidden");
-    }
-})
-
 userPassword.addEventListener("click", () => {
     userPassword.classList.remove("error");
     confirmPassword.classList.remove("error");
-    pwErrorMessage.classList.toggle("hidden");
+    pwErrorMessage.classList.add("hidden");
 })
 
 confirmPassword.addEventListener("click", () => {
     userPassword.classList.remove("error");
     confirmPassword.classList.remove("error");
-    pwErrorMessage.classList.toggle("hidden");
+    pwErrorMessage.classList.add("hidden");
 })
