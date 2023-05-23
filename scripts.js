@@ -17,23 +17,32 @@ let confirmPw = document.querySelector(".confirmPw");
 let submitButton = document.getElementById("submit_btn")
 let passwordInput = document.querySelector(".password-input");
 let pwErrorMessage = document.querySelector(".pwErrorMessage");
+let emailTelErrorMessage = document.querySelector(".emailTelErrorMessage");
 
 let emailRegX = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 let phoneRegX = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
 
 function validateEmailPhone(mail, phone) {
     if (emailRegX.test(mail.value) === false && phoneRegX.test(phone.value) === false) {
-        alert("You have entered an invalid email and phone number!")
-        return (false);
+        userEmail.classList.add("error");
+        userTel.classList.add("error");
+        emailTelErrorMessage.classList.remove("hidden");
+        emailTelErrorMessage.textContent = "Email and Tel are invalid.";
     }
     else if (emailRegX.test(mail.value) === true && phoneRegX.test(phone.value) === false) {
-        alert("You have entered an invalid phone number!  Please follow example text for format.")
-        return (false);
+        userEmail.classList.remove("error");
+        userTel.classList.add("error");
+        emailTelErrorMessage.classList.remove("hidden");
+        emailTelErrorMessage.textContent = "Tel is invalid.";
     } else if (emailRegX.test(mail.value) === false && phoneRegX.test(phone.value) === true) {
-        alert("You have entered an invalid email!  Please follow example text for format.")
-        return (false);
+        userEmail.classList.add("error");
+        userTel.classList.remove("error");
+        emailTelErrorMessage.classList.remove("hidden");
+        emailTelErrorMessage.textContent = "Email is invalid.";
     } else {
-        return (true);
+        userEmail.classList.remove("error");
+        userTel.classList.remove("error");
+        emailTelErrorMessage.classList.add("hidden");
     }
 }
 

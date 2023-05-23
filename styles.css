@@ -155,7 +155,7 @@ a {
     border: 3px solid var(--error-red);
 }
 
-.pwErrorMessage {
+.pwErrorMessage, .emailTelErrorMessage {
     align-self: center;
     color: var(--error-red);
     font-weight: bold;
