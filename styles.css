@@ -18,7 +18,7 @@
     visibility: hidden;
 }
 
-.fName, .lName, .eMail, .phoneNum, .pw, .confirmPw {
+.first-name-required, .last-name-required, .email-required, .phone-required, .pw-required, .confirm-pw-required {
     color: var(--error-red);
     font-weight: bold;
 }
@@ -155,7 +155,7 @@ a {
     border: 3px solid var(--error-red);
 }
 
-.pwErrorMessage, .emailTelErrorMessage {
+.pw-error-message, .email-tel-error-message {
     align-self: center;
     color: var(--error-red);
     font-weight: bold;

@@ -1,29 +1,39 @@
-// Input texts
+// Input Fields
 let firstName = document.getElementById("first_name");
 let lastName = document.getElementById("last_name");
 let userEmail = document.getElementById("user_email");
 let userTel = document.getElementById("user_tel");
 let userPassword = document.getElementById("user_password");
 let confirmPassword = document.getElementById("confirm_password");
-
-// Required elements
-let fName = document.querySelector(".fName");
-let lName = document.querySelector(".lName");
-let eMail = document.querySelector(".eMail");
-let phoneNum = document.querySelector(".phoneNum");
-let pw = document.querySelector(".pw");
-let confirmPw = document.querySelector(".confirmPw");
-
+// Required Message Elements
+let firstNameRequired = document.querySelector(".first-name-required");
+let lastNameRequired = document.querySelector(".last-name-required");
+let emailRequired = document.querySelector(".email-required");
+let phoneRequired = document.querySelector(".phone-required");
+let pwRequired = document.querySelector(".pw-required");
+let confirmPwRequired = document.querySelector(".confirm-pw-required");
+// Error Messages
+let pwErrorMessage = document.querySelector(".pw-error-message");
+let emailTelErrorMessage = document.querySelector(".email-tel-error-message");
+// Regex Patterns
+const emailRegX = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+const phoneRegX = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
+const lowerCaseLetters = /[a-z]/g;
+const upperCaseLetters = /[A-Z]/g;
+const numbers = /[0-9]/g;
+// Password Validation
+let letter = document.getElementById("letter");
+let capital = document.getElementById("capital");
+let number = document.getElementById("number");
+let length = document.getElementById("length");
+// Other
 let submitButton = document.getElementById("submit_btn")
-let passwordInput = document.querySelector(".password-input");
-let pwErrorMessage = document.querySelector(".pwErrorMessage");
-let emailTelErrorMessage = document.querySelector(".emailTelErrorMessage");
-
-let emailRegX = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-let phoneRegX = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
 
 function validateEmailPhone(mail, phone) {
-    if (emailRegX.test(mail.value) === false && phoneRegX.test(phone.value) === false) {
+    if (mail.value === "" && phone.value === "") {
+        return;
+    }
+    else if (emailRegX.test(mail.value) === false && phoneRegX.test(phone.value) === false) {
         userEmail.classList.add("error");
         userTel.classList.add("error");
         emailTelErrorMessage.classList.remove("hidden");
@@ -48,39 +58,39 @@ function validateEmailPhone(mail, phone) {
 
 function validateRequiredFields() {
     if (firstName.value === "") {
-        fName.classList.remove("hidden");
+        firstNameRequired.classList.remove("hidden");
     } else {
-        fName.classList.add("hidden");
+        firstNameRequired.classList.add("hidden");
     }
 
     if (lastName.value === "") {
-        lName.classList.remove("hidden");
+        lastNameRequired.classList.remove("hidden");
     } else {
-        lName.classList.add("hidden");
+        lastNameRequired.classList.add("hidden");
     }
 
     if (userEmail.value === "") {
-        eMail.classList.remove("hidden");
+        emailRequired.classList.remove("hidden");
     } else {
-        eMail.classList.add("hidden");
+        emailRequired.classList.add("hidden");
     }
 
     if (userTel.value === "") {
-        phoneNum.classList.remove("hidden");
+        phoneRequired.classList.remove("hidden");
     } else {
-        phoneNum.classList.add("hidden");
+        phoneRequired.classList.add("hidden");
     }
 
     if (userPassword.value === "") {
-        pw.classList.remove("hidden");
+        pwRequired.classList.remove("hidden");
     } else {
-        pw.classList.add("hidden");
+        pwRequired.classList.add("hidden");
     }
 
     if (confirmPassword.value === "") {
-        confirmPw.classList.remove("hidden");
+        confirmPwRequired.classList.remove("hidden");
     } else {
-        confirmPw.classList.add("hidden");
+        confirmPwRequired.classList.add("hidden");
     }
 }
 
@@ -101,11 +111,6 @@ submitButton.addEventListener("click", (e) => {
     validatePwConfirmMatch();
 })
 
-var letter = document.getElementById("letter");
-var capital = document.getElementById("capital");
-var number = document.getElementById("number");
-var length = document.getElementById("length");
-
 // When the user clicks on the password field, show the message box
 userPassword.onfocus = function () {
     document.getElementById("message").style.display = "block";
@@ -119,7 +124,6 @@ userPassword.onblur = function () {
 // When the user starts to type something inside the password field
 userPassword.onkeyup = function () {
     // Validate lowercase letters
-    var lowerCaseLetters = /[a-z]/g;
     if (userPassword.value.match(lowerCaseLetters)) {
         letter.classList.remove("invalid");
         letter.classList.add("valid");
@@ -129,7 +133,6 @@ userPassword.onkeyup = function () {
     }
 
     // Validate capital letters
-    var upperCaseLetters = /[A-Z]/g;
     if (userPassword.value.match(upperCaseLetters)) {
         capital.classList.remove("invalid");
         capital.classList.add("valid");
@@ -139,7 +142,6 @@ userPassword.onkeyup = function () {
     }
 
     // Validate numbers
-    var numbers = /[0-9]/g;
     if (userPassword.value.match(numbers)) {
         number.classList.remove("invalid");
         number.classList.add("valid");

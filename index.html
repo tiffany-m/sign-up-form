@@ -30,35 +30,35 @@
                 Let's do this!
                 <div class="block-input">
                     <div>
-                        <label for="first_name">First Name <span class="hidden fName">*Required</span></label>
+                        <label for="first_name">First Name <span class="hidden first-name-required">*Required</span></label>
                         <input type="text" class="input-text" id="first_name" name="first_name" minlength="2" maxlength="12">
                     </div>
                     <div>
-                        <label for="last_name">Last Name <span class="hidden lName">*Required</span></label>
+                        <label for="last_name">Last Name <span class="hidden last-name-required">*Required</span></label>
                         <input type="text" class="input-text"id="last_name" name="last_name" minlength="2" maxlength="12"> 
                     </div>
                 </div>
                 <div class="block-input">
                     <div>
-                        <label for="user_email">Email <span class="hidden eMail">*Required</span></label>
+                        <label for="user_email">Email <span class="hidden email-required">*Required</span></label>
                         <input type="email" class="input-text" id="user_email" name="user_email" placeholder="example@gmail.com">                        
                     </div>
                     <div>
-                        <label for="user_tel">Phone Number <span class="hidden phoneNum">*Required</span></label>
+                        <label for="user_tel">Phone Number <span class="hidden phone-required">*Required</span></label>
                         <input type="tel" class="input-text" id="user_tel" name="user_tel" maxlength="12" placeholder="000-000-0000">                        
                     </div>
-                    <div class="hidden emailTelErrorMessage"></div>
+                    <div class="hidden email-tel-error-message"></div>
                 </div>
-                <div class="block-input password-input">
+                <div class="block-input">
                     <div>
-                        <label for="user_password">Password <span class="hidden pw">*Required</span></label>
+                        <label for="user_password">Password <span class="hidden pw-required">*Required</span></label>
                         <input type="password" id="user_password" name="user_password" minlength="8" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
                     </div>
                     <div>
-                        <label for="confirm_password">Confirm Password <span class="hidden confirmPw">*Required</span></label> 
+                        <label for="confirm_password">Confirm Password <span class="hidden confirm-pw-required">*Required</span></label> 
                         <input type="password" id="confirm_password" name="confirm_password" minlength="8">                        
                     </div>
-                    <div class="hidden pwErrorMessage">Passwords do not match.</div>
+                    <div class="hidden pw-error-message">Passwords do not match.</div>
                 </div>
                 <div id="message">
                     <h3>Password must contain the following:</h3>
