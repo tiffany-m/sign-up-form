@@ -95,13 +95,17 @@ function validateRequiredFields() {
 }
 
 function validatePwConfirmMatch() {
-    if ((userPassword != confirmPassword) && (userPassword.value != "" && confirmPassword.value != "")) {
+    if ((userPassword.value != confirmPassword.value) && (userPassword.value != "" && confirmPassword.value != "")) {
         userPassword.classList.add("error");
         confirmPassword.classList.add("error");
         pwErrorMessage.classList.remove("hidden");
-        userPassword.textContent = "";
-        confirmPassword.textContent = "";
     }
+}
+
+function removePwFieldsError() {
+    userPassword.classList.remove("error");
+    confirmPassword.classList.remove("error");
+    pwErrorMessage.classList.add("hidden");
 }
 
 submitButton.addEventListener("click", (e) => {
@@ -111,10 +115,15 @@ submitButton.addEventListener("click", (e) => {
     validatePwConfirmMatch();
 })
 
+confirmPassword.addEventListener("click", () => {
+    removePwFieldsError();
+})
+
 // ------------------ PASSWORD MESSAGE BOX ---------------------
 // When user clicks on password field, show message box
 userPassword.onfocus = function () {
     document.getElementById("message").style.display = "block";
+    removePwFieldsError();
 }
 // When user clicks outside of password field, hide message box
 userPassword.onblur = function () {
@@ -154,16 +163,3 @@ userPassword.onkeyup = function () {
         length.classList.add("invalid");
     }
 }
-
-// Remove Error from password and confirm password fields
-userPassword.addEventListener("click", () => {
-    userPassword.classList.remove("error");
-    confirmPassword.classList.remove("error");
-    pwErrorMessage.classList.add("hidden");
-})
-
-confirmPassword.addEventListener("click", () => {
-    userPassword.classList.remove("error");
-    confirmPassword.classList.remove("error");
-    pwErrorMessage.classList.add("hidden");
-})
