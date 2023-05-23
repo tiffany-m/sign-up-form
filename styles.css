@@ -9,18 +9,30 @@
     --error-red: #f31974;
 }
 
+/* Specific fonts/sizes */
 @font-face {
     font-family: "Marck Script";
     src: url("assets/MarckScript-Regular.ttf") format("truetype");
 }
 
-.hidden {
-    visibility: hidden;
+.logo-text {
+    font-family: 'Marck Script', monospace;
+    font-size: 1.5rem;
 }
 
-.first-name-required, .last-name-required, .email-required, .phone-required, .pw-required, .confirm-pw-required {
-    color: var(--error-red);
-    font-weight: bold;
+.slant-text {
+    font-style: italic;
+}
+
+.logo.logo-text {
+    font-family: 'Marck Script', monospace;
+    font-size: 7rem;
+    color: var(--dark-teal);
+    text-shadow: -2px 2px 0 rgb(133, 131, 131);
+}
+
+.hidden {
+    visibility: hidden;
 }
 
 .container {
@@ -29,7 +41,7 @@
     font-size: 1rem;
 }
 
-/* Left half of page with background image ----------------------- */
+/* Left half of page with background image ----------------------------------------------------- */
 .image-block {
     display: flex;
     flex-direction: column;
@@ -58,14 +70,8 @@
     height: auto;
 }
 
-.logo-text {
-    font-family: 'Marck Script', monospace;
-    font-size: 7rem;
-    color: var(--dark-teal);
-    text-shadow: -2px 2px 0 rgb(133, 131, 131);
-}
 
-/* Right half of page with form ------------------------ */
+/* Right half of page with form ------------------------------------------------------------------- */
 
 .form-block {
     display: flex;
@@ -75,7 +81,9 @@
     width: 60vw;
 }
 
-.form-intro, form, .form-end {
+.form-intro, 
+form, 
+.form-end {
     padding: 2.5rem;
 }
 
@@ -87,15 +95,6 @@
     font-weight: bold;
 }
 
-.logo-font {
-    font-family: 'Marck Script', monospace;
-    font-size: 1.5rem;
-}
-
-.slant-text {
-    font-style: italic;
-}
-
 form {
     background-color: white;
     display: flex;
@@ -104,7 +103,9 @@ form {
     box-shadow: 0px 10px 20px var(--light-teal), 0px -5px 20px var(--light-teal);
 }
 
-input, label {
+/* Input and Labels */
+input, 
+label {
     display: block;
 }
 
@@ -120,11 +121,6 @@ input:focus {
 label {
     text-transform: uppercase;
     font-size: .75rem;
-}
-
-.block-input {
-    display: flex;
-    gap: 4rem;
 }
 
 input[type=submit] {
@@ -145,25 +141,43 @@ input[type="submit"]:active {
     box-shadow: 3px 2px 3px rgb(84, 119, 131);
 }
 
+.block-input {
+    display: flex;
+    gap: 4rem;
+}
+
+.first-name-required,
+.last-name-required,
+.email-required,
+.phone-required,
+.pw-required,
+.confirm-pw-required {
+    color: var(--error-red);
+    font-weight: bold;
+}
+
 a {
     text-decoration: none;
     color: var(--dark-teal);
     font-weight: bold;
 }
 
+/* Errors */
 .error {
     border: 3px solid var(--error-red);
 }
 
-.pw-error-message, .email-tel-error-message {
+.pw-error-message, 
+.email-tel-error-message {
     align-self: center;
     color: var(--error-red);
     font-weight: bold;
 }
 
 
-/* Password message box --------------------------------------------- */
+/* Password message box */
 #message {
+    font-size: .9rem;
     display: none;
     position: relative;
 }
@@ -172,13 +186,13 @@ a {
     padding: 5px;
 }
 
-/* Add a green text color and a checkmark when the requirements are right */
+/* Green text color when the requirements are right */
 .valid {
     color: #2ea55a;
     font-weight: bold;
 }
 
-/* Add a red text color and an "x" icon when the requirements are wrong */
+/* Red text color when the requirements are wrong */
 .invalid {
     color: var(--error-red);
     font-weight: bold;

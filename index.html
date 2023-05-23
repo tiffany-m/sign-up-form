@@ -11,13 +11,13 @@
         <div class="image-block">
             <div class="image-band">
                 <img class="logo-image" src="assets/logo.png" />
-                <span class="logo-text">Bloom</span>
+                <span class="logo logo-text">Bloom</span>
             </div>
         </div>
         <div class="form-block">
             <div class="form-intro">
                 <div>
-                    <h2>Live life in full <span class="logo-font">Bloom</span>.</h2>
+                    <h2>Live life in full <span class="logo-text">Bloom</span>.</h2>
                     We are a visionary company dedicated to helping you transform your life and unlock the full potential within you. At Bloom, we
                     believe that true fulfillment comes from nurturing both your physical and mental well-being. Our holistic approach
                     empowers you to embark on a transformative journey towards a healthier lifestyle while also discovering and pursuing
@@ -52,20 +52,20 @@
                 <div class="block-input">
                     <div>
                         <label for="user_password">Password <span class="hidden pw-required">*Required</span></label>
-                        <input type="password" id="user_password" name="user_password" minlength="8" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}">
+                        <input type="password" id="user_password" name="user_password">
                     </div>
                     <div>
                         <label for="confirm_password">Confirm Password <span class="hidden confirm-pw-required">*Required</span></label> 
-                        <input type="password" id="confirm_password" name="confirm_password" minlength="8">                        
+                        <input type="password" id="confirm_password" name="confirm_password">                        
                     </div>
                     <div class="hidden pw-error-message">Passwords do not match.</div>
                 </div>
                 <div id="message">
                     <h3>Password must contain the following:</h3>
-                    <p id="letter" class="invalid">A lowercase letter</p>
-                    <p id="capital" class="invalid">A capital letter</p>
-                    <p id="number" class="invalid">A number</p>
-                    <p id="length" class="invalid">Minimum 8 characters</p>
+                    <div id="letter" class="invalid">A lowercase letter</div>
+                    <div id="capital" class="invalid">A capital letter</div>
+                    <div id="number" class="invalid">A number</div>
+                    <div id="length" class="invalid">Minimum 8 characters</div>
                 </div>
                 <input type="submit" value="Create Account" id="submit_btn">
             </form>
