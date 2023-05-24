@@ -72,7 +72,6 @@
 
 
 /* Right half of page with form ------------------------------------------------------------------- */
-
 .form-block {
     display: flex;
     flex-direction: column;
@@ -146,6 +145,7 @@ input[type="submit"]:active {
     gap: 4rem;
 }
 
+/* Required <spans> that are originally hidden */
 .first-name-required,
 .last-name-required,
 .email-required,
@@ -174,12 +174,9 @@ a {
     font-weight: bold;
 }
 
-
-/* Password message box */
 #pw-message-box {
     font-size: .9rem;
     display: none;
-    /* position: relative; */
 }
 
 #pw-message-box p {
