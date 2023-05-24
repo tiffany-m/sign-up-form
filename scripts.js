@@ -15,6 +15,7 @@ let confirmPwRequired = document.querySelector(".confirm-pw-required");
 // Error Messages
 let pwErrorMessage = document.querySelector(".pw-error-message");
 let emailTelErrorMessage = document.querySelector(".email-tel-error-message");
+const pwMessageBox = document.getElementById("pw-message-box") 
 // Regex Patterns
 const emailRegX = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 const phoneRegX = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
@@ -123,12 +124,12 @@ confirmPassword.addEventListener("click", () => {
 // ------------------ PASSWORD MESSAGE BOX ---------------------
 // When user clicks on password field, show message box
 userPassword.onfocus = function () {
-    document.getElementById("message").style.display = "block";
+    pwMessageBox.style.cssText = "display: flex; flex-direction: row; gap: .5rem;";
     removePwFieldsError();
 }
 // When user clicks outside of password field, hide message box
 userPassword.onblur = function () {
-    document.getElementById("message").style.display = "none";
+    pwMessageBox.style.display = "none";
 }
 // When user starts to type something inside password field
 userPassword.onkeyup = function () {

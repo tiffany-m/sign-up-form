@@ -176,13 +176,13 @@ a {
 
 
 /* Password message box */
-#message {
+#pw-message-box {
     font-size: .9rem;
     display: none;
-    position: relative;
+    /* position: relative; */
 }
 
-#message p {
+#pw-message-box p {
     padding: 5px;
 }
 
