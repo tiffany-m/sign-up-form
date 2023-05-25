@@ -92,6 +92,7 @@ form,
     gap: 1rem;
     margin-right: 20%;
     font-weight: bold;
+    max-width: 800px;
 }
 
 form {
