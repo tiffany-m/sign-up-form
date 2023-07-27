@@ -1,7 +1,7 @@
 # Sign Up Form
-Simple calculator! 
+Simple Sign Up Form! 
 ## About
-This was a practice project for making forms.  Reference image from The Odin Project:
+This was a practice project for making forms and styling them.  Reference image from The Odin Project:
 ![Reference image to copy from The Odin Project.](assets/odin-sign-up-form.png)
 ## Build Status
 Complete
